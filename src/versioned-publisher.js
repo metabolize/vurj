@@ -3,7 +3,7 @@ var semver = require('semver');
 var Publisher = require('urj').Publisher;
 var url = require('url');
 
-var deployWithVersion = function (version, source, baseUrl, force, doneCallback) {
+var publishWithVersion = function (version, source, baseUrl, force, doneCallback) {
     if (! semver.valid(version)) {
         throw new Error('Must supply a valid semver version!');
     }
@@ -29,5 +29,5 @@ var deployWithVersion = function (version, source, baseUrl, force, doneCallback)
 };
 
 module.exports = {
-    deployWithVersion: deployWithVersion,
+    publishWithVersion: publishWithVersion,
 };
