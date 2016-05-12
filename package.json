@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "license": "BSD-2-Clause",
-  "main": "index.js",
+  "bin": {
+    "vurj": "./src/cli.js"
+  },
   "scripts": {
     "jscs": "jscs --config node_modules/bodylabs-javascript-style/jscs/jscsrc-shared . --extract '*.js'",
     "eslint": "eslint --config node_modules/bodylabs-javascript-style/eslint/eslintrc-shared.yml '**/*.js'",
@@ -16,7 +18,10 @@
     "url": "git@github.com:bodylabs/vurj.git"
   },
   "dependencies": {
-    "commander": "^2.9.0"
+    "async": "^2.0.0-rc.4",
+    "commander": "^2.9.0",
+    "semver": "^5.1.0",
+    "urj": "file:///Users/max/code/urj"
   },
   "devDependencies": {
     "bodylabs-javascript-style": "~5.0.0",
