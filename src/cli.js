@@ -11,7 +11,7 @@ program
         versionedDeployer.deployWithVersion(version, source, baseUrl, program.force, function (err) {
             if (err) {
                 console.error(err.message);
-                console.error('ERROR! Aborting deploy...')
+                console.error('ERROR! Aborting deploy...');
                 process.exit(1);
             }
         });

@@ -7,11 +7,10 @@
     "vurj": "./src/cli.js"
   },
   "scripts": {
-    "jscs": "jscs --config node_modules/bodylabs-javascript-style/jscs/jscsrc-shared . --extract '*.js'",
-    "eslint": "eslint --config node_modules/bodylabs-javascript-style/eslint/eslintrc-shared.yml '**/*.js'",
+    "jscs": "jscs --config node_modules/bodylabs-javascript-style/jscs/jscsrc-shared . --extract '*.js' -x",
+    "eslint": "eslint --config node_modules/bodylabs-javascript-style/eslint/eslintrc-shared.yml '**/*.js' --fix",
     "lint": "npm run jscs && npm run eslint",
-    "unittest": "mocha src --recursive",
-    "test": "npm run unittest && npm run lint"
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -26,8 +25,6 @@
   "devDependencies": {
     "bodylabs-javascript-style": "~5.0.0",
     "eslint": "~2.4.0",
-    "jscs": "^2.8.0",
-    "mocha": "^2.3.4",
-    "should": "^8.1.1"
+    "jscs": "^2.8.0"
   }
 }
