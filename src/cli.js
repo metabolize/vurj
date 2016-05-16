@@ -8,11 +8,13 @@ program
     .arguments('<version> <source> <baseUrl>')
     .option('-f, --force', 'Force the deploy even if the full-version release already exists')
     .action(function (version, source, baseUrl) {
-        versionedPublisher.publishWithVersion(version, source, baseUrl, program.force, function (err) {
+        versionedPublisher.publishWithVersion(version, source, baseUrl, Boolean(program.force), function (err) {
             if (err) {
                 console.error(err.message);
                 console.error('ERROR! Aborting deploy...');
                 process.exit(1);
+            } else {
+                console.log('SUCCESS!')
             }
         });
     })
