@@ -1,9 +1,11 @@
 {
   "name": "vurj",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "license": "BSD-2-Clause",
-  "main": "index.js",
+  "bin": {
+    "vurj": "./src/cli.js"
+  },
   "scripts": {
     "jscs": "jscs --config node_modules/bodylabs-javascript-style/jscs/jscsrc-shared . --extract '*.js'",
     "eslint": "eslint --config node_modules/bodylabs-javascript-style/eslint/eslintrc-shared.yml '**/*.js'",
