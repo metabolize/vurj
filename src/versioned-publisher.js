@@ -10,4 +10,8 @@ cc.publishWithVersion = c.fun(
     { force: c.bool },
     { doneCallback: cc.callback() });
 
-module.exports = cc.publishWithVersion.wrap(require('./versioned-publisher.impl.js'));
+var functions = {
+    publishWithVersion: cc.publishWithVersion,
+};
+
+module.exports = c.object(functions).wrap(require('./versioned-publisher.impl.js'));
