@@ -23,7 +23,12 @@ var publishWithVersion = function (version, source, baseUrl, force, doneCallback
                 publisher.publish(source, majorVersionUrl, callback);
             },
         ],
-        doneCallback);
+
+        function (err) {
+            // Intentionally strip all other arguments because
+            // we don't care about the data returned
+            doneCallback(err);
+        });
 };
 
 module.exports = {

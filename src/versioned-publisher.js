@@ -7,7 +7,7 @@ cc.publishWithVersion = c.fun(
     { version: cc.SemanticVersion },
     { source: c.string },
     { baseUrl: cc.s3uri },
-    { noClobber: c.bool },
-    { doneCallback: cc.callback });
+    { force: c.bool },
+    { doneCallback: cc.callback() });
 
 module.exports = cc.publishWithVersion.wrap(require('./versioned-publisher.impl.js'));
