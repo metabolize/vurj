@@ -11,7 +11,7 @@ program
         versionedPublisher.publishWithVersion(version, source, baseUrl, Boolean(program.force), function (err) {
             if (err) {
                 console.error(err.message);
-                console.error('ERROR! Aborting publish...');
+                console.error('ERROR! Some publishes failed to complete. Check the log for more info.');
                 process.exit(1);
             } else {
                 console.log('SUCCESS!');
