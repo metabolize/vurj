@@ -3,26 +3,31 @@
   "version": "1.0.0",
   "description": "",
   "license": "BSD-2-Clause",
-  "main": "index.js",
+  "bin": {
+    "vurj": "./src/cli.js"
+  },
   "scripts": {
-    "jscs": "jscs --config node_modules/bodylabs-javascript-style/jscs/jscsrc-shared . --extract '*.js'",
+    "jscs": "jscs --config node_modules/bodylabs-javascript-style/jscs/jscsrc-shared .",
     "eslint": "eslint --config node_modules/bodylabs-javascript-style/eslint/eslintrc-shared.yml '**/*.js'",
     "lint": "npm run jscs && npm run eslint",
-    "unittest": "mocha src --recursive",
-    "test": "npm run unittest && npm run lint"
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:bodylabs/vurj.git"
   },
   "dependencies": {
-    "commander": "^2.9.0"
+    "async": "^1.5.2",
+    "commander": "^2.9.0",
+    "rho-cc-node-style-callback": "^1.0.2",
+    "rho-cc-s3-uri": "^1.0.0",
+    "rho-contracts": "git+https://github.com/bodylabs/rho-contracts.js.git#1.2.2",
+    "semver": "^5.1.0",
+    "urj": "^1.1.0"
   },
   "devDependencies": {
     "bodylabs-javascript-style": "~5.0.0",
     "eslint": "~2.4.0",
-    "jscs": "^2.8.0",
-    "mocha": "^2.3.4",
-    "should": "^8.1.1"
+    "jscs": "^2.8.0"
   }
 }
