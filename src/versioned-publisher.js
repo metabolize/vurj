@@ -14,4 +14,4 @@ var functions = {
     publishWithVersion: cc.publishWithVersion,
 };
 
-module.exports = c.object(functions).wrap(require('./versioned-publisher.impl.js'));
+module.exports = c.wrapAll(require('./versioned-publisher.impl.js'), functions);
