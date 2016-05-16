@@ -19,6 +19,9 @@
   "dependencies": {
     "async": "^2.0.0-rc.4",
     "commander": "^2.9.0",
+    "rho-cc-node-style-callback": "^1.0.2",
+    "rho-cc-s3-uri": "^1.0.0",
+    "rho-contracts": "git+https://github.com/bodylabs/rho-contracts.js.git#1.2.2",
     "semver": "^5.1.0",
     "urj": "^1.1.0"
   },

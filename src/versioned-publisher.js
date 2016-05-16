@@ -1,33 +1,13 @@
-var async = require('async');
-var semver = require('semver');
-var Publisher = require('urj').Publisher;
-var url = require('url');
+var _ = require('underscore');
+var c = require('rho-contracts');
 
-var publishWithVersion = function (version, source, baseUrl, force, doneCallback) {
-    if (! semver.valid(version)) {
-        throw new Error('Must supply a valid semver version!');
-    }
-    var majorVersion = semver.major(version);
+var cc = _(require('./common-contracts').clone());
 
-    var fullVersionUrl = url.resolve(baseUrl, version);
-    var majorVersionUrl = url.resolve(baseUrl, majorVersion.toString());
-    console.log('Publishing ' + source + '...');
+cc.publishWithVersion = c.fun(
+    { version: cc.SemanticVersion },
+    { source: c.string },
+    { baseUrl: cc.s3uri },
+    { force: c.bool },
+    { doneCallback: cc.callback });
 
-    async.series([
-            function (callback) {
-                console.log('Publishing new version to ' + fullVersionUrl + "...");
-                var publisher = new Publisher({ noClobber: ! force });
-                publisher.publish(source, fullVersionUrl, callback);
-            },
-            function (callback) {
-                console.log('Setting as latest of major version ' + majorVersion + ', publishing to ' + majorVersionUrl + ".");
-                var publisher = new Publisher({ noClobber: false });
-                publisher.publish(source, majorVersionUrl, callback);
-            },
-        ],
-        doneCallback);
-};
-
-module.exports = {
-    publishWithVersion: publishWithVersion,
-};
+module.exports = cc.publishWithVersion.wrap(require('./versioned-publisher.impl.js'));
