@@ -14,7 +14,7 @@ program
                 console.error('ERROR! Aborting publish...');
                 process.exit(1);
             } else {
-                console.log('SUCCESS!')
+                console.log('SUCCESS!');
             }
         });
     })
