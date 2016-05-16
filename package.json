@@ -17,7 +17,7 @@
     "url": "git@github.com:bodylabs/vurj.git"
   },
   "dependencies": {
-    "async": "^2.0.0-rc.4",
+    "async": "^1.5.2",
     "commander": "^2.9.0",
     "rho-cc-node-style-callback": "^1.0.2",
     "rho-cc-s3-uri": "^1.0.0",
