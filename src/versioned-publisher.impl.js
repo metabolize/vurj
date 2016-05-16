@@ -3,7 +3,7 @@ var semver = require('semver');
 var Publisher = require('urj').Publisher;
 var url = require('url');
 
-var publishWithVersion = function (version, source, baseUrl, noClobber, doneCallback) {
+var publishWithVersion = function (version, source, baseUrl, force, doneCallback) {
     var majorVersion = semver.major(version);
 
     var fullVersionUrl = url.resolve(baseUrl, version);
@@ -13,7 +13,7 @@ var publishWithVersion = function (version, source, baseUrl, noClobber, doneCall
     async.series([
             function (callback) {
                 console.log('Publishing new version to ' + fullVersionUrl + "...");
-                var publisher = new Publisher({ noClobber: noClobber });
+                var publisher = new Publisher({ noClobber: ! force });
                 publisher.publish(source, fullVersionUrl, callback);
             },
             function (callback) {
