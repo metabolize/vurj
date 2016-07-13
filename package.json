@@ -7,9 +7,7 @@
     "vurj": "./src/cli.js"
   },
   "scripts": {
-    "jscs": "jscs --config node_modules/bodylabs-javascript-style/jscs/jscsrc-shared .",
-    "eslint": "eslint --config node_modules/bodylabs-javascript-style/eslint/eslintrc-shared.yml '**/*.js'",
-    "lint": "npm run jscs && npm run eslint",
+    "lint": "eslint '**/*.js'",
     "test": "npm run lint"
   },
   "repository": {
@@ -26,8 +24,7 @@
     "urj": "^1.1.0"
   },
   "devDependencies": {
-    "bodylabs-javascript-style": "~5.0.0",
-    "eslint": "~2.4.0",
-    "jscs": "^2.8.0"
+    "eslint": "~2.13.0",
+    "eslint-plugin-bodylabs": "~7.1.0"
   }
 }
