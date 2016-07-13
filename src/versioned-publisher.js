@@ -1,5 +1,5 @@
 var _ = require('underscore');
-var c = require('rho-contracts');
+var c = require('rho-contracts-fork');
 
 var cc = _(require('./common-contracts')).clone();
 

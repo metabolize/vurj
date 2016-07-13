@@ -1,4 +1,4 @@
-var c = require('rho-contracts');
+var c = require('rho-contracts-fork');
 var semver = require('semver');
 
 var cc = module.exports = {};
