@@ -10,7 +10,8 @@ var publishWithVersion = function (version, source, baseUrl, force, doneCallback
     var majorVersionUrl = url.resolve(baseUrl, majorVersion.toString());
     console.log('Publishing ' + source + '...');
 
-    async.series([
+    async.series(
+        [
             function (callback) {
                 console.log('Publishing new version to ' + fullVersionUrl + "...");
                 var publisher = new Publisher({ noClobber: ! force });
@@ -23,7 +24,6 @@ var publishWithVersion = function (version, source, baseUrl, force, doneCallback
                 publisher.publish(source, majorVersionUrl, callback);
             },
         ],
-
         function (err) {
             // Intentionally strip all other arguments because
             // we don't care about the data returned
