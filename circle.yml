@@ -3,3 +3,8 @@ machine:
     version: 5.8.0
   python:
     version: 2.7.10
+
+dependencies:
+  pre: 
+    - pip install --upgrade pip setuptools
+
