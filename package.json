@@ -20,7 +20,7 @@
     "rho-cc-node-style-callback": "^2.0.0",
     "rho-cc-s3-uri": "^2.0.0",
     "rho-contracts-fork": "^1.3.0",
-    "semver": "^5.1.0",
+    "semver": "^7.1.3",
     "urj": "^1.1.0"
   },
   "devDependencies": {
