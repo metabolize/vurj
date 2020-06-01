@@ -24,7 +24,7 @@
     "urj": "^1.1.0"
   },
   "devDependencies": {
-    "eslint": "~2.13.0",
+    "eslint": "~7.1.0",
     "eslint-plugin-bodylabs": "~7.1.0"
   }
 }
